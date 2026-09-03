@@ -68,7 +68,7 @@
 .banner .banner-content h6 {
   margin: 0;
   font-family: var(--heading-font-family);
-  color: var(--background-color);
+  color: white;
   line-height: 1.1;
   text-shadow: 0 1px 3px rgb(0 0 0 / 35%);
 }
