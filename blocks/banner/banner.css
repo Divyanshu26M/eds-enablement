@@ -1,7 +1,7 @@
-/* Banner block — image + title with a default deep-blue look */
+/* Banner block — image + title with an optional background color (default blue) */
 
 .banner {
-  /* scoped deep-blue token — not part of the global design system */
+  /* default background — overridable per-instance via a color row (set in JS) */
   --banner-bg: #1a4a7a;
 
   position: relative;
@@ -34,12 +34,19 @@
   object-fit: cover;
 }
 
-/* deep-blue overlay for text readability over the image */
+/*
+ * Overlay tinted with the banner background color so any color (default blue
+ * or an author-set value) keeps the title readable over the image.
+ */
 .banner .banner-image::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(0deg, rgb(26 74 122 / 85%) 0%, rgb(26 74 122 / 55%) 100%);
+  background: linear-gradient(
+    0deg,
+    color-mix(in srgb, var(--banner-bg) 85%, transparent) 0%,
+    color-mix(in srgb, var(--banner-bg) 55%, transparent) 100%
+  );
   pointer-events: none;
 }
 
@@ -61,9 +68,14 @@
 .banner .banner-content h6 {
   margin: 0;
   font-family: var(--heading-font-family);
-  color: black;
+  color: var(--background-color);
   line-height: 1.1;
   text-shadow: 0 1px 3px rgb(0 0 0 / 35%);
+}
+
+/* ===== Dark variant ===== */
+.banner.dark {
+  --banner-bg: var(--dark-color);
 }
 
 @media (width >= 900px) {

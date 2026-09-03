@@ -1,8 +1,11 @@
 /**
- * Banner block — image + title text with a default deep-blue look.
- * Content model (two rows):
- *   row 1: image (may arrive as <img> inside <p> per the EDS image gotcha)
- *   row 2: title text (heading)
+ * Banner block — image + title text with an optional background color.
+ * Content model (rows, order-independent):
+ *   - image      (may arrive as <img> inside <p> per the EDS image gotcha)
+ *   - title text (heading)
+ *   - background color (optional): a CSS color value, e.g. "#1a4a7a", "navy",
+ *     "rgb(20 60 90)". Defaults to blue (see banner.css) when omitted.
+ * Variant: "banner (dark)" → .banner.dark preset dark look.
  * @param {Element} block The block element
  */
 export default async function decorate(block) {
@@ -20,8 +23,23 @@ export default async function decorate(block) {
     }
   }
 
-  // The title cell is the row that has no image.
-  const titleRow = rows.find((row) => !row.querySelector('img'));
+  const nonImageRows = rows.filter((row) => !row.querySelector('img'));
+
+  // Detect an optional color row: a cell whose only content is a valid CSS
+  // color value and no heading/link/image.
+  const isColor = (value) => !!value
+    && CSS.supports('background-color', value)
+    && value.toLowerCase() !== 'transparent';
+  const colorRow = nonImageRows.find((row) => {
+    if (row.querySelector('h1, h2, h3, h4, h5, h6, a, img')) return false;
+    return isColor(row.textContent.trim());
+  });
+  if (colorRow) {
+    block.style.setProperty('--banner-bg', colorRow.textContent.trim());
+  }
+
+  // The remaining non-image, non-color row holds the title.
+  const titleRow = nonImageRows.find((row) => row !== colorRow);
   const content = document.createElement('div');
   content.className = 'banner-content';
   if (titleRow) {
