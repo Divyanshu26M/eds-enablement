@@ -19,6 +19,19 @@
   --link-color: #3b63fb;
   --link-hover-color: #ec0a0a;
 
+  /* Note block variants */
+  --color-info: #055a8c;
+  --color-info-background: #d1ecf1;
+  --color-warning: #856404;
+  --color-warning-background: #fff3cd;
+  --color-error: #721c24;
+  --color-error-background: #f8d7da;
+  --color-success: #155724;
+  --color-success-background: #d4edda;
+
+  /* Note block icon size */
+  --font-size-body-m: 18px;
+
   /* fonts */
   --body-font-family: roboto, roboto-fallback, sans-serif;
   --heading-font-family: roboto-condensed, roboto-condensed-fallback, sans-serif;

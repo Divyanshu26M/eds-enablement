@@ -1,0 +1,56 @@
+main .note {
+    --note-color: var(--color-info);
+
+    padding: 1.6rem 2.2rem;
+    border-radius: 0.5rem;
+    display: flex;
+    gap: 1.6rem;
+    background-color: var(--color-info-background);
+    color: var(--color-info);
+}
+
+main .note .icon {
+    flex-shrink: 0;
+    width: var(--font-size-body-m);
+    height: var(--font-size-body-m);
+    padding-top: 0.26rem;
+}
+
+main .note p {
+    margin: 0;
+}
+
+main .note p.note-heading {
+    font-weight: 600;
+}
+
+/* Variations */
+main .note.warning {
+    --note-color: var(--color-warning);
+
+    background-color: var(--color-warning-background);
+    color: var(--color-warning);
+}
+
+main .note.error {
+    --note-color: var(--color-error);
+
+    background-color: var(--color-error-background);
+    color: var(--color-error);
+}
+
+main .note.success {
+    --note-color: var(--color-success);
+
+    background-color: var(--color-success-background);
+    color: var(--color-success);
+}
+
+/* Other styles */
+main .note.accent-border {
+    border-left: 6px var(--note-color) solid;
+}
+
+main .note.no-icon .icon {
+    display: none;
+}
