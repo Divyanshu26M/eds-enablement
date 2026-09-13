@@ -12,6 +12,65 @@ import {
   buildBlock,
 } from './aem.js';
 
+/**
+ * Fetches placeholders from /placeholders.json, caches the result on window,
+ * and returns them as a key/value object for direct lookup.
+ *
+ * Usage from any block:
+ *   import { fetchPlaceholders } from '../../scripts/scripts.js';
+ *   const p = await fetchPlaceholders();
+ *   button.textContent = p.ctaPrimary || 'Submit';
+ *
+ * @param {string} [prefix] Optional path prefix for multi-locale sites (e.g. '/fr')
+ * @returns {Promise<Record<string, string>>}
+ */
+window.placeholders = window.placeholders || {};
+
+export async function fetchPlaceholders(prefix = 'default') {
+  window.placeholders[prefix] = window.placeholders[prefix] || new Promise((resolve) => {
+    const path = prefix === 'default' ? '/placeholders.json' : `${prefix}/placeholders.json`;
+    fetch(path)
+      .then((resp) => (resp.ok ? resp.json() : { data: [] }))
+      .then((json) => {
+        const placeholders = {};
+        json.data.forEach((row) => {
+          placeholders[row.key] = row.value;
+        });
+        resolve(placeholders);
+      })
+      .catch(() => resolve({}));
+  });
+  return window.placeholders[prefix];
+}
+
+/**
+ * Walks the DOM and replaces any {{key}} text with the corresponding
+ * placeholder value from /placeholders.json. Unknown keys are left as-is.
+ *
+ * Runs automatically as part of decorateMain, so authors can write
+ * {{siteName}}, {{ctaPrimary}}, etc. directly in any doc.
+ *
+ * @param {HTMLElement} root The container to walk
+ */
+async function substitutePlaceholders(root) {
+  // Skip work if no {{...}} tokens exist anywhere in the tree
+  if (!/\{\{[\w-]+\}\}/.test(root.textContent)) return;
+
+  const p = await fetchPlaceholders();
+  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+  const nodes = [];
+  while (walker.nextNode()) nodes.push(walker.currentNode);
+
+  nodes.forEach((node) => {
+    if (node.nodeValue.includes('{{')) {
+      node.nodeValue = node.nodeValue.replace(
+        /\{\{([\w-]+)\}\}/g,
+        (match, key) => (key in p ? p[key] : match),
+      );
+    }
+  });
+}
+
 if (window.trustedTypes && window.trustedTypes.createPolicy) {
   const innerTT = window.trustedTypes.createPolicy('tt-inner', {
     createHTML: (s) => s, // avoid stack overflow
@@ -153,6 +212,7 @@ export function decorateMain(main) {
   decorateSections(main);
   decorateBlocks(main);
   decorateButtons(main);
+  substitutePlaceholders(main);
 }
 
 /**
