@@ -1,0 +1,26 @@
+version: 1
+
+indices:
+  enablement-index:
+    target: /query-index.json
+    include:
+      - /**
+    exclude:
+      - "**/fragments/**"
+      - "**/drafts/**"
+      - "**/*.json"
+      - "**/nav"
+      - "**/footer"
+    properties:
+      title:
+        selectFirst: meta[property="og:title"]
+        value: |
+          attribute(el, "content")
+      description:
+        selectFirst: meta[property="og:description"]
+        value: |
+          attribute(el, "content")
+      image:
+        selectFirst: meta[property="og:image"]
+        value: |
+          attribute(el, "content")
