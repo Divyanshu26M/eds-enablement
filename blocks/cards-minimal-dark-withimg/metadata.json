@@ -1,0 +1,17 @@
+{
+  "variantName": "cards-minimal-dark-withimg",
+  "baseBlock": "cards",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "large",
+    "structure": "heading + text + image"
+  },
+  "contentPattern": "Each row is a card: an image cell plus a body cell containing a category pill, heading and description",
+  "usage": "Image-led card grid with category label, heading and supporting text",
+  "options": [],
+  "memberVariantIds": ["cards-minimal-dark-withimg"]
+}

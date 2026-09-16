@@ -1,0 +1,76 @@
+.tabs .tabs-panel {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  align-items: center;
+}
+
+.tabs .tabs-panel[aria-hidden='true'] {
+  display: none;
+}
+
+.tabs .tabs-panel picture {
+  display: block;
+  line-height: 0;
+}
+
+.tabs .tabs-panel img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+/* tablist: row of selectable tab buttons below the panel */
+.tabs .tabs-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.tabs .tabs-list button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  border: 1px solid var(--border-color, #e8e8e8);
+  border-radius: 16px;
+  padding: 16px;
+  background-color: var(--background-color, #fff);
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  white-space: normal;
+  overflow: visible;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.tabs .tabs-list button p {
+  margin: 0;
+}
+
+.tabs .tabs-list button picture,
+.tabs .tabs-list button img {
+  flex: 0 0 auto;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.tabs .tabs-list button[aria-selected='true'] {
+  border-color: var(--text-color, #000);
+}
+
+@media (width >= 900px) {
+  .tabs .tabs-panel {
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+  }
+
+  .tabs .tabs-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

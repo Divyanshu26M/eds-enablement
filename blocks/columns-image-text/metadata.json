@@ -1,0 +1,26 @@
+{
+  "variantName": "columns-image-text",
+  "baseBlock": "columns",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "large",
+    "structure": "image + text"
+  },
+  "contentPattern": "One row with an image column and a text column (breadcrumb, heading, byline)",
+  "usage": {
+    "pagesUsing": [
+      "/blog",
+      "/fashion-trends-young-adults-casual-sport"
+    ],
+    "reuseCount": 2,
+    "lastUsed": "2026-09-16T03:00:11.000Z"
+  },
+  "options": [],
+  "memberVariantIds": [
+    "columns-image-text"
+  ]
+}

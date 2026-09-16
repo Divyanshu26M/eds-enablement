@@ -1,0 +1,17 @@
+{
+  "variantName": "cards-image-grid",
+  "baseBlock": "cards",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": true,
+    "imagePattern": "grid",
+    "structure": "image grid"
+  },
+  "contentPattern": "Each row is an image-only card rendered in a dense square grid",
+  "usage": "Snapshot / photo gallery grid",
+  "options": [],
+  "memberVariantIds": ["cards-image-grid"]
+}

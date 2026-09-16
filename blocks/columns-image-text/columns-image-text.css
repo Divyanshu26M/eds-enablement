@@ -1,0 +1,60 @@
+/*
+ * Columns (image + text) — extracted from https://wknd-trendsetters.site/
+ * Two-column feature row: large image beside a text column
+ * (heading + byline). Values from source computed styles.
+ */
+
+.columns-image-text > div {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+}
+
+.columns-image-text .columns-image-text-img {
+  line-height: 0;
+}
+
+.columns-image-text .columns-image-text-img img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.columns-image-text .columns-image-text-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.columns-image-text .columns-image-text-body h2 {
+  margin: 0;
+  font-size: 40px;
+  line-height: 44px;
+  letter-spacing: -0.8px;
+}
+
+.columns-image-text .columns-image-text-body p {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* date / read-time line renders muted on the source */
+.columns-image-text .columns-image-text-body p:last-child {
+  color: var(--muted-color);
+}
+
+@media (width >= 900px) {
+  .columns-image-text > div {
+    flex-direction: row;
+    align-items: center;
+    gap: 48px;
+  }
+
+  .columns-image-text .columns-image-text-img,
+  .columns-image-text .columns-image-text-body {
+    flex: 1;
+  }
+}

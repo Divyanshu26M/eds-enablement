@@ -35,3 +35,104 @@
     padding: 40px 32px;
   }
 }
+
+/* option: minimal-light-withimg — article-header hero: cover image beside
+   content (breadcrumbs, title, byline, category tag) on a light background.
+   Values extracted from wknd-trendsetters.site article header.
+   The block has two authored rows (image row, content row); lay them out as
+   the two columns of the article header. */
+.hero.minimal-light-withimg {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  align-items: center;
+  padding: 0;
+  min-height: 0;
+  color: var(--text-color);
+}
+
+/* neutralize base-hero absolute picture positioning */
+.hero.minimal-light-withimg picture {
+  position: static;
+  z-index: auto;
+  inset: auto;
+  display: block;
+}
+
+.hero.minimal-light-withimg .hero-media img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 20px;
+  aspect-ratio: 3 / 2;
+}
+
+/* content column stacks its children in normal flow */
+.hero.minimal-light-withimg .hero-content {
+  display: block;
+}
+
+.hero.minimal-light-withimg .hero-content h1 {
+  max-width: none;
+  margin: 0;
+  color: var(--text-color);
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-xxl);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+/* byline: two stacked rows of inline meta items */
+.hero.minimal-light-withimg .hero-byline {
+  margin-top: 16px;
+}
+
+.hero.minimal-light-withimg .hero-byline-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.hero.minimal-light-withimg .hero-byline-row + .hero-byline-row {
+  margin-top: 8px;
+}
+
+.hero.minimal-light-withimg .hero-meta {
+  margin: 0;
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-xs);
+  line-height: 1.4;
+  color: var(--muted-color);
+}
+
+/* author name (2nd item of first row) renders in solid text color */
+.hero.minimal-light-withimg .hero-byline-row:first-child .hero-meta:nth-child(2) {
+  color: var(--text-color);
+}
+
+/* category tag pill */
+.hero.minimal-light-withimg .hero-tag {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  margin: 16px 0 0;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  background-color: #f4fe8b;
+  color: var(--text-color);
+  font-family: var(--body-font-family);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.6;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+@media (width >= 900px) {
+  .hero.minimal-light-withimg {
+    grid-template-columns: 1fr 1fr;
+  }
+}

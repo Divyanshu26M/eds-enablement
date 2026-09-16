@@ -1,0 +1,17 @@
+{
+  "variantName": "tabs",
+  "baseBlock": "tabs",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "large",
+    "structure": "text + 4 CTAs + 8 images"
+  },
+  "contentPattern": "Each row is a tab: first cell is the tab label (avatar + name), remaining cells are the panel content (image + testimonial text)",
+  "usage": "Testimonial / profile switcher with a large panel and a row of selectable tabs",
+  "options": [],
+  "memberVariantIds": ["tabs-minimal-dark-withimg"]
+}

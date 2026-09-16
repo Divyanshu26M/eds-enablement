@@ -1,0 +1,17 @@
+{
+  "variantName": "cards",
+  "baseBlock": "cards",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": true,
+    "imagePattern": "large",
+    "structure": "heading + text"
+  },
+  "contentPattern": "Each row is a card with an optional image cell and a body cell",
+  "usage": "Responsive card grid of image + text items",
+  "options": [],
+  "memberVariantIds": ["cards-minimal-dark"]
+}

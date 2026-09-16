@@ -1,0 +1,82 @@
+/*
+ * Accordion (FAQ) variant
+ * Expandable Q&A rows built from authored label/body pairs.
+ * Values extracted from source computed styles (wknd-trendsetters.site FAQ).
+ */
+
+.accordion-faq {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.accordion-faq .accordion-faq-item {
+  border: 1px solid var(--border-color, #e8e8e8);
+  border-radius: 16px;
+  background-color: transparent;
+  overflow: hidden;
+}
+
+.accordion-faq .accordion-faq-label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 24px 32px;
+  font-family: var(--body-font-family);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 28.8px;
+  color: var(--text-color, #000);
+  cursor: pointer;
+  list-style: none;
+}
+
+.accordion-faq .accordion-faq-label::-webkit-details-marker {
+  display: none;
+}
+
+/* plus icon (becomes an X when open) drawn with two pseudo-element bars */
+.accordion-faq .accordion-faq-label::before,
+.accordion-faq .accordion-faq-label::after {
+  content: '';
+  position: absolute;
+  right: 32px;
+  top: 50%;
+  width: 16px;
+  height: 2px;
+  background-color: currentcolor;
+  transition: transform 0.3s;
+}
+
+.accordion-faq .accordion-faq-label::before {
+  transform: translateY(-50%);
+}
+
+.accordion-faq .accordion-faq-label::after {
+  transform: translateY(-50%) rotate(90deg);
+}
+
+/* open state: rotate both bars 45deg so the plus turns into an X */
+.accordion-faq .accordion-faq-item[open] .accordion-faq-label::before {
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.accordion-faq .accordion-faq-item[open] .accordion-faq-label::after {
+  transform: translateY(-50%) rotate(135deg);
+}
+
+.accordion-faq .accordion-faq-body {
+  padding: 0 32px 32px;
+  font-size: 16px;
+  line-height: 27.2px;
+  color: #404040;
+}
+
+.accordion-faq .accordion-faq-body p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 27.2px;
+  color: #404040;
+}

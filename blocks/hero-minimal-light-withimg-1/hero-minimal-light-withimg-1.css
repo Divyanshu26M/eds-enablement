@@ -1,0 +1,78 @@
+/* Hero (minimal light, with image collage) -- values from source computed styles */
+
+.hero-minimal-light-withimg-1 > div {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  align-items: center;
+}
+
+/* text column */
+.hero-minimal-light-withimg-1-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hero-minimal-light-withimg-1-content h1 {
+  margin: 0;
+  font-family: var(--heading-font-family);
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: var(--text-color);
+}
+
+.hero-minimal-light-withimg-1-content p {
+  margin: 24px 0 0;
+  font-family: var(--body-font-family);
+  font-size: 18px;
+  line-height: 28.8px;
+  color: var(--text-color);
+}
+
+.hero-minimal-light-withimg-1-content .button-group {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.hero-minimal-light-withimg-1-content .button-group .button {
+  margin: 0;
+}
+
+/* image collage */
+.hero-minimal-light-withimg-1-media {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.hero-minimal-light-withimg-1-media picture {
+  display: block;
+  line-height: 0;
+}
+
+.hero-minimal-light-withimg-1-media img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+@media (width >= 900px) {
+  .hero-minimal-light-withimg-1 > div {
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+  }
+
+  .hero-minimal-light-withimg-1-content h1 {
+    font-size: 56px;
+    line-height: 61.6px;
+    letter-spacing: -1.12px;
+  }
+}
