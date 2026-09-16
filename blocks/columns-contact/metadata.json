@@ -1,0 +1,17 @@
+{
+  "variantName": "columns-contact",
+  "baseBlock": "columns",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "noimg",
+    "structure": "text + contact list"
+  },
+  "contentPattern": "One row, two columns: an intro column (heading + text) and a contact-details column (label/value pairs)",
+  "usage": "Contact / connect section pairing intro copy with a contact list",
+  "options": [],
+  "memberVariantIds": ["columns-contact"]
+}

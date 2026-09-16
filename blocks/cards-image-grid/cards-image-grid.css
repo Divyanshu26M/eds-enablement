@@ -1,0 +1,42 @@
+/* Block: cards-image-grid -- values extracted from source computed styles */
+
+.cards-image-grid > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.cards-image-grid > ul > li {
+  line-height: 0;
+  aspect-ratio: 1 / 1;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.cards-image-grid .cards-image-grid-cell {
+  height: 100%;
+}
+
+.cards-image-grid .cards-image-grid-cell img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+/* tablet: 2 columns */
+@media (width >= 600px) {
+  .cards-image-grid > ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* desktop: 4 columns */
+@media (width >= 900px) {
+  .cards-image-grid > ul {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "variantName": "cards-article",
+  "baseBlock": "cards",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": true,
+    "imagePattern": "large",
+    "structure": "image + tag + date + title"
+  },
+  "contentPattern": "Each row is an article teaser: image, a meta row (tag + date) and a title",
+  "usage": {
+    "pagesUsing": [
+      "/blog",
+      "/fashion-trends-young-adults-casual-sport"
+    ],
+    "reuseCount": 2,
+    "lastUsed": "2026-09-16T03:00:11.000Z"
+  },
+  "options": [],
+  "memberVariantIds": [
+    "cards-article"
+  ]
+}

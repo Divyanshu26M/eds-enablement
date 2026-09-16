@@ -1,0 +1,40 @@
+{
+  "variantName": "hero-minimal-light-withimg-1",
+  "baseBlock": "hero",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "large",
+    "structure": "heading + text + 2 CTAs + 3 images"
+  },
+  "contentPattern": "Text column (heading + paragraph + two CTAs) alongside a collage of images",
+  "usage": {
+    "pagesUsing": [
+      "/blog",
+      "/faq",
+      "/fashion-trends-young-adults-casual-sport"
+    ],
+    "reuseCount": 3,
+    "lastUsed": "2026-09-16T03:00:11.000Z"
+  },
+  "options": [
+    {
+      "class": "minimal-light-withimg-2",
+      "label": "Minimal Light Withimg 2"
+    }
+  ],
+  "memberVariantIds": [
+    "hero-minimal-light-withimg-1",
+    "hero-minimal-light-withimg-2"
+  ],
+  "usageTracking": {
+    "pagesUsing": [
+      "/index"
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-09-15T18:12:00.000Z"
+  }
+}

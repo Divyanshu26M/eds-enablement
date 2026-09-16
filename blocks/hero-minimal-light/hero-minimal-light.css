@@ -1,0 +1,30 @@
+.hero-minimal-light {
+  padding: 40px 0;
+}
+
+.hero-minimal-light .hero-minimal-light-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  max-width: 640px;
+}
+
+.hero-minimal-light h1,
+.hero-minimal-light h2 {
+  margin: 0;
+}
+
+.hero-minimal-light p {
+  margin: 0;
+}
+
+.hero-minimal-light .button-container {
+  margin-top: 8px;
+}
+
+@media (width >= 900px) {
+  .hero-minimal-light {
+    padding: 80px 0;
+  }
+}

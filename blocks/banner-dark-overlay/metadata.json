@@ -1,0 +1,17 @@
+{
+  "variantName": "banner-dark-overlay",
+  "baseBlock": "banner",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "hasBackgroundImage": true,
+    "hasGrid": false,
+    "imagePattern": "full-bleed",
+    "structure": "background image + heading + text + CTA"
+  },
+  "contentPattern": "A background image with an overlaid heading, paragraph and CTA",
+  "usage": "Full-bleed CTA banner with dark overlay",
+  "options": [],
+  "memberVariantIds": ["banner-dark-overlay"]
+}

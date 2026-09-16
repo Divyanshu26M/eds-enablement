@@ -1,0 +1,17 @@
+{
+  "variantName": "tabs-testimonial",
+  "baseBlock": "tabs",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "large",
+    "structure": "tabbed testimonials"
+  },
+  "contentPattern": "Each row is a testimonial tab: label cell (avatar + name/role) and a panel (photo + quote)",
+  "usage": "Testimonial switcher with a large panel and a row of avatar tabs",
+  "options": [],
+  "memberVariantIds": ["tabs-testimonial"]
+}

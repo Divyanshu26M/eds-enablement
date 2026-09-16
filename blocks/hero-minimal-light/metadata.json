@@ -1,0 +1,17 @@
+{
+  "variantName": "hero-minimal-light",
+  "baseBlock": "hero",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "noimg",
+    "structure": "heading + text + 1 CTAs"
+  },
+  "contentPattern": "A single content cell: heading, supporting paragraph and one CTA, left-aligned on a light background",
+  "usage": "Text-only hero / page intro with a single call to action",
+  "options": [],
+  "memberVariantIds": ["hero-minimal-light"]
+}

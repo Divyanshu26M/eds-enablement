@@ -1,0 +1,17 @@
+{
+  "variantName": "footer",
+  "baseBlock": "footer",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "moderate",
+    "hasBackgroundImage": false,
+    "hasGrid": true,
+    "imagePattern": "noimg",
+    "structure": "logo + social links + link columns"
+  },
+  "contentPattern": "Site footer loaded from the footer fragment: logo, social links and link column navigation",
+  "usage": "Global site footer with brand, social icons and grouped link columns",
+  "options": [],
+  "memberVariantIds": ["footer-global"]
+}

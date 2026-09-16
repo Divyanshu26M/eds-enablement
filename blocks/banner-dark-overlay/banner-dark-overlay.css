@@ -1,0 +1,104 @@
+/*
+ * Banner (dark overlay) variant
+ * Full-bleed background image inside a rounded card, with a bottom gradient
+ * scrim and overlaid heading / text / CTA pinned to the bottom-left.
+ * Values extracted from https://wknd-trendsetters.site/ computed styles.
+ */
+
+.banner-dark-overlay {
+  position: relative;
+  display: flex;
+  align-items: flex-end; /* content pinned to bottom of card */
+  min-height: 448px; /* match source card height */
+  border-radius: 20px;
+  overflow: hidden;
+  color: var(--background-color, #fff);
+}
+
+/* background image layer fills the card */
+.banner-dark-overlay .banner-dark-overlay-image {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+}
+
+.banner-dark-overlay .banner-dark-overlay-image picture,
+.banner-dark-overlay .banner-dark-overlay-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* bottom-up dark gradient scrim so text stays legible */
+.banner-dark-overlay .banner-dark-overlay-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(to top, rgb(0 0 0 / 70%) 0%, rgb(0 0 0 / 0%) 60%);
+}
+
+/* overlaid content */
+.banner-dark-overlay .banner-dark-overlay-content {
+  position: relative;
+  z-index: 1;
+  max-width: 672px;
+  padding: 32px 24px;
+}
+
+.banner-dark-overlay .banner-dark-overlay-content h1,
+.banner-dark-overlay .banner-dark-overlay-content h2,
+.banner-dark-overlay .banner-dark-overlay-content h3 {
+  margin: 0;
+  font-family: var(--heading-font-family);
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: var(--background-color, #fff);
+}
+
+.banner-dark-overlay .banner-dark-overlay-content p {
+  margin: 16px 0 0;
+  font-family: var(--body-font-family);
+  font-size: 18px;
+  line-height: 28.8px;
+  color: var(--background-color, #fff);
+}
+
+/* CTA group */
+.banner-dark-overlay .banner-dark-overlay-content .button-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 32px 0 0;
+}
+
+/* inverse (light) button on the dark banner */
+main .banner-dark-overlay a.button:any-link {
+  border-color: var(--background-color, #fff);
+  background-color: var(--background-color, #fff);
+  color: var(--text-color, #000);
+}
+
+main .banner-dark-overlay a.button:any-link:hover,
+main .banner-dark-overlay a.button:any-link:focus-visible {
+  border-color: var(--background-color, #fff);
+  background-color: transparent;
+  color: var(--background-color, #fff);
+}
+
+@media (width >= 900px) {
+  .banner-dark-overlay .banner-dark-overlay-content {
+    padding: 64px;
+  }
+
+  .banner-dark-overlay .banner-dark-overlay-content h1,
+  .banner-dark-overlay .banner-dark-overlay-content h2,
+  .banner-dark-overlay .banner-dark-overlay-content h3 {
+    font-size: 56px;
+    line-height: 61.6px;
+    letter-spacing: -1.12px;
+  }
+}

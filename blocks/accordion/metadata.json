@@ -1,0 +1,17 @@
+{
+  "variantName": "accordion",
+  "baseBlock": "accordion",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "moderate",
+    "hasBackgroundImage": false,
+    "hasGrid": true,
+    "imagePattern": "noimg",
+    "structure": "text"
+  },
+  "contentPattern": "Repeating label/body row pairs rendered as expandable details/summary items",
+  "usage": "FAQ and Q&A sections with expandable rows",
+  "options": [],
+  "memberVariantIds": ["accordion-moderate-dark"]
+}

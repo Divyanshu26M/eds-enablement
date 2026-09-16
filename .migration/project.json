@@ -1,9 +1,14 @@
 {
+  "type": "da",
   "sites": {
     "eds-enablement": {
       "previewOrg": "divyanshu26m",
       "previewSite": "eds-enablement",
-      "contentHostUrl": "https://content.da.live/divyanshu26m/eds-enablement/"
+      "contentHostUrl": "https://content.da.live/divyanshu26m/eds-enablement/",
+      "libraryUrl": "https://main--eds-enablement--divyanshu26m.aem.live/library/blocks.json"
     }
-  }
+  },
+  "features": [
+    "site-planning"
+  ]
 }

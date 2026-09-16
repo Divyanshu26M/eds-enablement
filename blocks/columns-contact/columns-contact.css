@@ -1,0 +1,77 @@
+/*
+ * Columns (contact) variant — "Let's connect" two-column layout.
+ * Left: intro (heading + text). Right: contact list (label + value pairs).
+ * Values extracted from source computed styles (wknd-trendsetters.site/faq).
+ */
+
+/* row: stacked on mobile, two equal columns on desktop */
+.columns-contact > div {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: start;
+}
+
+/* --- intro column --- */
+.columns-contact .columns-contact-intro h2 {
+  margin: 0;
+  font-size: var(--heading-font-size-xxl); /* 36px mobile / 40px desktop */
+}
+
+.columns-contact .columns-contact-intro p {
+  margin: 16px 0 0;
+  font-size: var(--body-font-size-m); /* 18px */
+  line-height: 1.6;
+  color: rgb(64 64 64);
+}
+
+/* --- contact details column (flat h3 + value list) --- */
+.columns-contact .columns-contact-details h3 {
+  margin: 32px 0 0; /* gap between contact items */
+  font-size: var(--body-font-size-xs); /* 14px */
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0.7px;
+  color: var(--muted-color);
+}
+
+.columns-contact .columns-contact-details h3:first-child {
+  margin-top: 0;
+}
+
+.columns-contact .columns-contact-details p {
+  margin: 8px 0 0; /* label -> value spacing */
+  font-size: var(--body-font-size-m); /* 18px */
+  line-height: 1.6;
+}
+
+.columns-contact .columns-contact-details a:any-link {
+  color: var(--text-color);
+  font-weight: 400;
+  text-decoration: none;
+}
+
+/* undo EDS auto-button decoration on contact links (email/phone) */
+.columns-contact .columns-contact-details a.button:any-link {
+  display: inline;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  background: none;
+  color: var(--text-color);
+  font: inherit;
+  white-space: normal;
+}
+
+.columns-contact .columns-contact-details .button-container {
+  margin: 0;
+}
+
+@media (width >= 900px) {
+  .columns-contact > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+  }
+}

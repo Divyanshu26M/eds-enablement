@@ -1,0 +1,24 @@
+{
+  "variantName": "hero",
+  "baseBlock": "hero",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "minimal",
+    "hasBackgroundImage": true,
+    "hasGrid": false,
+    "imagePattern": "large",
+    "structure": "heading + text + CTA + image"
+  },
+  "contentPattern": "Heading and content with an optional background or side image",
+  "usage": "Page hero; supports a text-over-image default and a side-by-side light variant",
+  "options": [
+    { "class": "minimal-light-withimg", "label": "Minimal Light Withimg" }
+  ],
+  "memberVariantIds": ["hero-minimal-dark-withimg", "hero-minimal-light-withimg"],
+  "usageTracking": {
+    "pagesUsing": ["/blog/ace-pro-court-polo"],
+    "reuseCount": 1,
+    "lastUsed": "2026-09-16T02:41:00.000Z"
+  }
+}

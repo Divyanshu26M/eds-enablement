@@ -1,0 +1,17 @@
+{
+  "variantName": "header",
+  "baseBlock": "header",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "minimal",
+    "hasBackgroundImage": false,
+    "hasGrid": false,
+    "imagePattern": "noimg",
+    "structure": "logo + nav + CTA"
+  },
+  "contentPattern": "Site header / navigation loaded from the nav fragment",
+  "usage": "Global site header with logo, navigation and a subscribe CTA",
+  "options": [],
+  "memberVariantIds": ["header-global"]
+}
